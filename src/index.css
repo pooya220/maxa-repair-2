@@ -1,0 +1,571 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom styles to match the screenshots */
+body {
+  font-family: var(--font-sans);
+}
+
+.logo-panel .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Custom scrollbar to keep it sleek */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Premium Dark Mode: a consistent navy surface with readable contrast. */
+.dark {
+  color-scheme: dark;
+  --dark-page: #0b1220;
+  --dark-surface: #111c2d;
+  --dark-surface-raised: #172538;
+  --dark-border: #2a3b50;
+  --dark-text: #e6edf5;
+  --dark-muted: #91a2b6;
+}
+
+.dark body,
+.dark #root,
+.dark #app-workspace,
+.dark #app-viewport,
+.dark #dynamic-tab-wrapper,
+.dark #login-container,
+.dark #login-illustration-side,
+.dark #login-form-side,
+.dark main {
+  background-color: var(--dark-page) !important;
+  color: var(--dark-text) !important;
+}
+
+/* Full-page view surfaces. Attribute selectors are used for Tailwind's
+   arbitrary-value classes, whose # character cannot be used unescaped. */
+.dark #repairs-view,
+.dark #consignment-view,
+.dark #dashboard-view,
+.dark #reminders-view,
+.dark [class~="bg-[#ebf2fc]"],
+.dark [class~="bg-[#f0f4fa]"] {
+  background-color: var(--dark-page) !important;
+}
+
+.dark .bg-white,
+.dark [class*="bg-white"] {
+  background-color: var(--dark-surface) !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark [class~="bg-[#f1f5f9]"],
+.dark [class~="bg-[#f8fafc]"] {
+  background-color: var(--dark-surface-raised) !important;
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark .border-slate-400,
+.dark [class~="border-slate-200\/50"] {
+  border-color: var(--dark-border) !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #e6edf5 !important;
+}
+
+.dark .text-slate-700 {
+  color: #d1dce9 !important;
+}
+
+.dark .text-slate-600 {
+  color: #b5c3d3 !important;
+}
+
+.dark .text-slate-500 {
+  color: #91a2b6 !important;
+}
+
+.dark .text-slate-400 {
+  color: #74869b !important;
+}
+
+.dark [class~="text-[#1a2a3a]"],
+.dark [class~="text-[#253b51]"] {
+  color: #dbe6f2 !important;
+}
+
+/* Dark, low-saturation versions of status chips and alerts. */
+.dark .bg-sky-50,
+.dark .bg-blue-50 {
+  background-color: #102c46 !important;
+}
+
+.dark .bg-emerald-50 {
+  background-color: #12372d !important;
+}
+
+.dark .bg-teal-50 {
+  background-color: #12363a !important;
+}
+
+.dark .bg-orange-50,
+.dark .bg-amber-50 {
+  background-color: #3a2b18 !important;
+}
+
+.dark .bg-rose-50 {
+  background-color: #3b1e2a !important;
+}
+
+.dark .bg-sky-100,
+.dark .bg-blue-100,
+.dark .bg-emerald-100,
+.dark .bg-orange-100,
+.dark .bg-amber-100,
+.dark .bg-rose-100 {
+  background-color: #223348 !important;
+}
+
+.dark .text-sky-700,
+.dark .text-sky-600,
+.dark .text-blue-700,
+.dark .text-blue-800 {
+  color: #7dd3fc !important;
+}
+
+.dark .text-emerald-700,
+.dark .text-emerald-800,
+.dark .text-emerald-900 {
+  color: #86efac !important;
+}
+
+.dark .text-teal-600,
+.dark .text-teal-700 {
+  color: #5eead4 !important;
+}
+
+.dark .text-orange-700,
+.dark .text-amber-700,
+.dark .text-amber-900 {
+  color: #fdba74 !important;
+}
+
+.dark .text-rose-600,
+.dark .text-rose-700,
+.dark .text-rose-800 {
+  color: #fda4af !important;
+}
+
+.dark .border-sky-200,
+.dark .border-blue-200,
+.dark .border-emerald-200,
+.dark .border-teal-200,
+.dark .border-orange-200,
+.dark .border-amber-200,
+.dark .border-rose-200 {
+  border-color: #38506a !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #162438 !important;
+  color: #e6edf5 !important;
+  border-color: #3a4e66 !important;
+  caret-color: #f5a07b;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #71849a !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #5b86b1 !important;
+  box-shadow: 0 0 0 2px rgba(91, 134, 177, 0.2) !important;
+}
+
+/* Tables stay dark without losing row separation or hover feedback. */
+.dark #repairs-table-container,
+.dark #consignment-table-container,
+.dark table {
+  background-color: var(--dark-surface) !important;
+  border-color: var(--dark-border) !important;
+}
+
+.dark table thead tr {
+  background-color: #16273b !important;
+  border-color: var(--dark-border) !important;
+}
+
+.dark table tbody tr {
+  background-color: var(--dark-surface) !important;
+  border-color: var(--dark-border) !important;
+}
+
+.dark table tbody tr:hover {
+  background-color: #1b3047 !important;
+}
+
+.dark table td,
+.dark table th {
+  border-color: var(--dark-border) !important;
+}
+
+/* Dark table accents: keep data rows neutral and use distinct header/border colors. */
+.dark #repairs-table-container {
+  border-color: #39799e !important;
+  box-shadow: 0 12px 30px rgba(8, 12, 20, 0.28) !important;
+}
+
+.dark #consignment-table-container {
+  border-color: #8a4b32 !important;
+  box-shadow: 0 12px 30px rgba(8, 12, 20, 0.28) !important;
+}
+
+.dark #repairs-table-container table thead tr {
+  background: linear-gradient(135deg, #3b8fbd, #286f9b) !important;
+  border-color: #77c8f0 !important;
+}
+
+.dark #consignment-table-container table thead tr {
+  background: linear-gradient(135deg, #b84f27, #8f351e) !important;
+  border-color: #d66a3d !important;
+}
+
+.dark #repairs-table-container table tbody tr,
+.dark #consignment-table-container table tbody tr {
+  background-color: var(--dark-surface) !important;
+}
+
+.dark #repairs-table-container table tbody tr:nth-child(even),
+.dark #consignment-table-container table tbody tr:nth-child(even) {
+  background-color: #142236 !important;
+}
+
+.dark #repairs-table-container table tbody tr:hover,
+.dark #consignment-table-container table tbody tr:hover {
+  background-color: #1b3047 !important;
+  box-shadow: none !important;
+}
+
+.dark #repairs-table-container table td,
+.dark #repairs-table-container table th {
+  border-color: #31536b !important;
+}
+
+.dark #consignment-table-container table td,
+.dark #consignment-table-container table th {
+  border-color: #67412f !important;
+}
+
+.dark #add-consignment-btn {
+  background-color: #286f9b !important;
+  border-color: #3b8fbd !important;
+}
+
+.dark #add-consignment-btn:hover {
+  background-color: #3b8fbd !important;
+  border-color: #77c8f0 !important;
+}
+
+.dark #add-consignment-btn:active {
+  background-color: #1f587c !important;
+}
+
+.dark #repairs-table-container table tbody td:first-child,
+.dark #consignment-table-container table tbody td:first-child {
+  color: #e6edf5 !important;
+  background-color: transparent !important;
+}
+
+.dark #repairs-table-container #table-footer-status,
+.dark #consignment-table-container #table-footer-status {
+  background-color: var(--dark-surface-raised) !important;
+  border-color: var(--dark-border) !important;
+  color: #d1dce9 !important;
+}
+
+/* Overlays and dialogs. */
+.dark #db-offline-overlay {
+  background-color: rgba(7, 13, 24, 0.94) !important;
+}
+
+.dark #viewport-loading {
+  background-color: var(--dark-page) !important;
+}
+
+.dark #viewport-loading span {
+  color: var(--dark-muted) !important;
+}
+
+.dark #viewport-loading svg {
+  color: #f08a5d !important;
+}
+
+.dark #detail-modal-overlay {
+  background-color: var(--dark-page) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark #settings-modal,
+.dark #export-modal > div {
+  background-color: var(--dark-surface) !important;
+  border-color: var(--dark-border) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark #settings-body-split,
+.dark #settings-content-panel,
+.dark #settings-sidebar,
+.dark #export-modal section,
+.dark #export-modal header,
+.dark #export-modal footer {
+  background-color: #0f1a2a !important;
+  border-color: var(--dark-border) !important;
+}
+
+.dark #settings-sidebar button {
+  color: #9aabbd !important;
+}
+
+.dark #settings-sidebar button:hover {
+  background-color: #1b3047 !important;
+  color: #e6edf5 !important;
+}
+
+.dark #settings-sidebar button[class~="bg-[#1a2a3a]"] {
+  background-color: #243b55 !important;
+  color: #ffffff !important;
+}
+
+.dark #export-modal label:hover,
+.dark #export-modal button:hover {
+  background-color: #1b3047 !important;
+}
+
+.dark .text-orange-600 {
+  color: #ff9a70 !important;
+}
+
+/* Section tabs above form and dashboard cards use the same orange in dark mode.
+   The login form is intentionally excluded. */
+.dark #dashboard-view div.absolute[class*="-top-"],
+.dark #detail-modal-overlay div.absolute[class*="-top-"] {
+  background-color: #e05a2b !important;
+  border-color: #f07845 !important;
+  color: #ffffff !important;
+}
+
+/* Keep save actions consistent with the blue repair-table accent in dark mode. */
+.dark button:has(svg.lucide-save) {
+  background-color: #286f9b !important;
+  border-color: #3b8fbd !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(40, 111, 155, 0.22) !important;
+}
+
+.dark button:has(svg.lucide-save):hover {
+  background-color: #3b8fbd !important;
+  border-color: #77c8f0 !important;
+}
+
+.dark button:has(svg.lucide-save):active {
+  background-color: #1f587c !important;
+}
+
+.dark button:has(svg.lucide-printer) {
+  background-color: #286f9b !important;
+  border-color: #3b8fbd !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(40, 111, 155, 0.22) !important;
+}
+
+.dark button:has(svg.lucide-printer):hover {
+  background-color: #3b8fbd !important;
+  border-color: #77c8f0 !important;
+}
+
+.dark button:has(svg.lucide-printer):active {
+  background-color: #1f587c !important;
+}
+
+.dark .sms-shipping-button-sent {
+  background-color: #172538 !important;
+  border-color: #3b8fbd !important;
+  color: #dbeafe !important;
+}
+
+.dark .sms-shipping-button-sent:hover {
+  background-color: #1b3047 !important;
+}
+
+.repair-sms-shipping-button {
+  background-color: #f0642f !important;
+  border-color: #f0642f !important;
+  color: #ffffff !important;
+}
+
+.repair-sms-shipping-button:hover {
+  background-color: #dd5224 !important;
+  border-color: #dd5224 !important;
+}
+
+/* Preserve the dashboard's semantic hover feedback with dark, readable shades. */
+.dark #dashboard-view [class~="hover:bg-emerald-50"]:hover,
+.dark #dashboard-view .group:hover [class~="group-hover:bg-emerald-50"] {
+  background-color: #12372d !important;
+}
+
+.dark #dashboard-view [class~="hover:bg-amber-50"]:hover {
+  background-color: #3a2b18 !important;
+}
+
+.dark #dashboard-view [class~="hover:bg-rose-50"]:hover,
+.dark #dashboard-view .group:hover [class~="group-hover:bg-rose-50"] {
+  background-color: #3b1e2a !important;
+}
+
+.dark #dashboard-view [class~="hover:bg-sky-50"]:hover {
+  background-color: #102c46 !important;
+}
+
+.dark #dashboard-view [class~="hover:bg-blue-100/40"]:hover {
+  background-color: #183653 !important;
+}
+
+.dark #dashboard-view [class~="hover:bg-slate-50"]:hover {
+  background-color: #1b3047 !important;
+}
+
+.dark #dashboard-view [class~="hover:bg-slate-100"]:hover {
+  background-color: #223348 !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:border-emerald-300"],
+.dark #dashboard-view .group:hover [class~="group-hover:border-emerald-400"],
+.dark #dashboard-view [class~="hover:border-emerald-300"]:hover,
+.dark #dashboard-view [class~="hover:border-emerald-400"]:hover {
+  border-color: #34d399 !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:border-amber-400"],
+.dark #dashboard-view [class~="hover:border-amber-300"]:hover,
+.dark #dashboard-view [class~="hover:border-amber-400"]:hover {
+  border-color: #fbbf24 !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:border-rose-300"],
+.dark #dashboard-view [class~="hover:border-rose-400"]:hover {
+  border-color: #fb7185 !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:border-sky-400"],
+.dark #dashboard-view [class~="hover:border-sky-300"]:hover {
+  border-color: #38bdf8 !important;
+}
+
+.dark #dashboard-view [class~="hover:border-slate-300"]:hover,
+.dark #dashboard-view [class~="hover:border-slate-400"]:hover {
+  border-color: #64748b !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:text-emerald-600"],
+.dark #dashboard-view .group:hover [class~="group-hover:text-emerald-700"] {
+  color: #86efac !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:text-amber-700"] {
+  color: #fcd34d !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:text-rose-600"],
+.dark #dashboard-view .group:hover [class~="group-hover:text-rose-700"] {
+  color: #fda4af !important;
+}
+
+.dark #dashboard-view .group:hover [class~="group-hover:text-sky-700"] {
+  color: #7dd3fc !important;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0d1726;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3a4e66;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #55718f;
+}
+
+/* Hide print custom layout by default on screen */
+#print-custom-layout {
+  display: none !important;
+}
+
+/* Styling for Print Mode */
+@media print {
+  /* Do NOT hide #root as it contains our print components */
+  #root {
+    display: block !important;
+    visibility: visible !important;
+    background: white !important;
+  }
+
+  /* Hide the root app structure and other non-print elements */
+  #app-workspace,
+  #screen-preview-sheet,
+  .fixed, 
+  [role="dialog"],
+  .modal-backdrop, 
+  #empty-form-confirm-overlay {
+    display: none !important;
+  }
+
+  /* Force display only our custom print layouts */
+  #print-custom-layout,
+  #print-actual-document {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background-color: white !important;
+    color: black !important;
+    direction: rtl !important;
+    page-break-after: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #print-custom-layout *,
+  #print-actual-document * {
+    visibility: visible !important;
+    color-scheme: light !important;
+  }
+}
+

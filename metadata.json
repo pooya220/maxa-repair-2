@@ -1,0 +1,6 @@
+{
+  "name": "MAXA Repair and Consignment Management System",
+  "description": "سامانه مدیریت و پذیرش دستگاه‌های تعمیری کارگاه و فرآیندهای امانی شرکت مکسا (MAXA) شامل مانیتورینگ کارگاهی، ارسال خودکار پیامک و صدور چاپی فیش",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
