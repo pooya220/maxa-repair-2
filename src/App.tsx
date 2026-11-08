@@ -424,7 +424,13 @@ export default function App() {
       <Sidebar
         activeTab={activeTab}
         setActiveTab={handleSidebarTabSelection}
-        onOpenSettings={() => setShowSettings(true)}
+        onOpenSettings={() => {
+          if (user.role === 'admin') {
+            setShowSettings(true);
+            return;
+          }
+          showNotification("شما مجوز انجام این عملیات را ندارید.", "error");
+        }}
         onRefreshData={async () => {
           await Promise.all([fetchRepairs(), fetchDbStatus(), fetchSettings(), fetchReminders()]);
         }}
@@ -596,7 +602,7 @@ export default function App() {
       )}
 
       {/* MODAL 2: Settings Panel */}
-      {showSettings && (
+      {showSettings && user.role === 'admin' && (
         <SettingsModal
           onClose={() => setShowSettings(false)}
           dbStatus={dbStatus}
