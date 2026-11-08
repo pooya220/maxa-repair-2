@@ -569,3 +569,251 @@ body {
   }
 }
 
+/* The pink palette is activated only for a signed-in account with role="pink-user". */
+html[data-user-theme="pink"] {
+  --pink-page: #fff5f8;
+  --pink-surface: #fffafd;
+  --pink-raised: #fdebf2;
+  --pink-border: #f1c6d8;
+  --pink-text: #452b39;
+  --pink-muted: #8b6477;
+  --pink-accent: #bd4c7c;
+  --pink-accent-hover: #a63c69;
+}
+
+html[data-user-theme="pink"] body,
+html[data-user-theme="pink"] #root,
+html[data-user-theme="pink"] #app-workspace,
+html[data-user-theme="pink"] #app-viewport,
+html[data-user-theme="pink"] #dynamic-tab-wrapper,
+html[data-user-theme="pink"] #repairs-view,
+html[data-user-theme="pink"] #consignment-view,
+html[data-user-theme="pink"] #dashboard-view,
+html[data-user-theme="pink"] #reminders-view,
+html[data-user-theme="pink"] main {
+  background-color: var(--pink-page) !important;
+  color: var(--pink-text) !important;
+}
+
+html[data-user-theme="pink"] #app-sidebar {
+  background-color: #54283f !important;
+  border-color: #75415c !important;
+}
+
+html[data-user-theme="pink"] #app-sidebar [class*="bg-[#1a2a3a]"],
+html[data-user-theme="pink"] [class~="bg-[#1a2a3a]"] {
+  background-color: var(--pink-accent) !important;
+}
+
+html[data-user-theme="pink"] #app-sidebar [class~="bg-[#253b51]"],
+html[data-user-theme="pink"] [class~="bg-[#253b51]"] {
+  background-color: #923c64 !important;
+}
+
+html[data-user-theme="pink"] [class~="bg-[#e05a2b]"],
+html[data-user-theme="pink"] [class~="bg-[#f0642f]"],
+html[data-user-theme="pink"] .repair-sms-shipping-button {
+  background-color: var(--pink-accent) !important;
+  border-color: var(--pink-accent) !important;
+  color: #ffffff !important;
+}
+
+html[data-user-theme="pink"] [class~="hover:bg-[#253b51]"]:hover,
+html[data-user-theme="pink"] [class~="hover:bg-[#dd5224]"]:hover,
+html[data-user-theme="pink"] .repair-sms-shipping-button:hover {
+  background-color: var(--pink-accent-hover) !important;
+  border-color: var(--pink-accent-hover) !important;
+}
+
+html[data-user-theme="pink"] .bg-white,
+html[data-user-theme="pink"] [class*="bg-white"] {
+  background-color: var(--pink-surface) !important;
+}
+
+html[data-user-theme="pink"] .bg-slate-50,
+html[data-user-theme="pink"] .bg-slate-100,
+html[data-user-theme="pink"] [class~="bg-[#f0f4fa]"],
+html[data-user-theme="pink"] [class~="bg-[#ebf2fc]"],
+html[data-user-theme="pink"] [class~="bg-[#f8fafc]"] {
+  background-color: var(--pink-raised) !important;
+}
+
+html[data-user-theme="pink"] .border-slate-100,
+html[data-user-theme="pink"] .border-slate-200,
+html[data-user-theme="pink"] .border-slate-300,
+html[data-user-theme="pink"] [class~="border-slate-200/50"],
+html[data-user-theme="pink"] #repairs-table-container,
+html[data-user-theme="pink"] #consignment-table-container {
+  border-color: var(--pink-border) !important;
+}
+
+html[data-user-theme="pink"] .text-slate-900,
+html[data-user-theme="pink"] .text-slate-800,
+html[data-user-theme="pink"] .text-slate-700 {
+  color: var(--pink-text) !important;
+}
+
+html[data-user-theme="pink"] .text-slate-600,
+html[data-user-theme="pink"] .text-slate-500 {
+  color: var(--pink-muted) !important;
+}
+
+html[data-user-theme="pink"] input,
+html[data-user-theme="pink"] select,
+html[data-user-theme="pink"] textarea {
+  border-color: var(--pink-border) !important;
+  accent-color: var(--pink-accent) !important;
+}
+
+html[data-user-theme="pink"] input:focus,
+html[data-user-theme="pink"] select:focus,
+html[data-user-theme="pink"] textarea:focus {
+  border-color: var(--pink-accent) !important;
+  box-shadow: 0 0 0 2px rgb(189 76 124 / 18%) !important;
+}
+
+html[data-user-theme="pink"] #repairs-table-container table thead tr,
+html[data-user-theme="pink"] #consignment-table-container table thead tr {
+  background: linear-gradient(135deg, #d46b96, #b74778) !important;
+  border-color: #e59ab8 !important;
+  color: #ffffff !important;
+}
+
+html[data-user-theme="pink"] #repairs-table-container table tbody tr,
+html[data-user-theme="pink"] #consignment-table-container table tbody tr,
+html[data-user-theme="pink"] #repairs-table-container table,
+html[data-user-theme="pink"] #consignment-table-container table {
+  background-color: var(--pink-surface) !important;
+  border-color: var(--pink-border) !important;
+}
+
+html[data-user-theme="pink"] #repairs-table-container table tbody tr:nth-child(even),
+html[data-user-theme="pink"] #consignment-table-container table tbody tr:nth-child(even) {
+  background-color: var(--pink-raised) !important;
+}
+
+html[data-user-theme="pink"] #repairs-table-container table tbody tr:hover,
+html[data-user-theme="pink"] #consignment-table-container table tbody tr:hover {
+  background-color: #f8dce8 !important;
+}
+
+html[data-user-theme="pink"].dark {
+  --dark-page: #1b121a;
+  --dark-surface: #261923;
+  --dark-surface-raised: #33202e;
+  --dark-border: #593449;
+  --dark-text: #f8eaf1;
+  --dark-muted: #c4a2b2;
+  --pink-page: #1b121a;
+  --pink-surface: #261923;
+  --pink-raised: #33202e;
+  --pink-border: #684157;
+  --pink-text: #f8eaf1;
+  --pink-muted: #c4a2b2;
+  --pink-accent: #bd5b89;
+  --pink-accent-hover: #d277a0;
+}
+
+html[data-user-theme="pink"].dark body,
+html[data-user-theme="pink"].dark #root,
+html[data-user-theme="pink"].dark #app-workspace,
+html[data-user-theme="pink"].dark #app-viewport,
+html[data-user-theme="pink"].dark #dynamic-tab-wrapper,
+html[data-user-theme="pink"].dark #repairs-view,
+html[data-user-theme="pink"].dark #consignment-view,
+html[data-user-theme="pink"].dark #dashboard-view,
+html[data-user-theme="pink"].dark #reminders-view,
+html[data-user-theme="pink"].dark main {
+  background-color: var(--pink-page) !important;
+  color: var(--pink-text) !important;
+}
+
+html[data-user-theme="pink"].dark #app-sidebar {
+  background-color: #301b2a !important;
+  border-color: #684157 !important;
+}
+
+html[data-user-theme="pink"].dark .bg-white,
+html[data-user-theme="pink"].dark [class*="bg-white"],
+html[data-user-theme="pink"].dark .bg-slate-50,
+html[data-user-theme="pink"].dark .bg-slate-100 {
+  background-color: var(--pink-surface) !important;
+}
+
+html[data-user-theme="pink"].dark .border-slate-100,
+html[data-user-theme="pink"].dark .border-slate-200,
+html[data-user-theme="pink"].dark .border-slate-300,
+html[data-user-theme="pink"].dark [class~="border-slate-200/50"] {
+  border-color: var(--pink-border) !important;
+}
+
+html[data-user-theme="pink"].dark .text-slate-900,
+html[data-user-theme="pink"].dark .text-slate-800,
+html[data-user-theme="pink"].dark .text-slate-700,
+html[data-user-theme="pink"].dark .text-slate-600 {
+  color: var(--pink-text) !important;
+}
+
+html[data-user-theme="pink"].dark .text-slate-500,
+html[data-user-theme="pink"].dark .text-slate-400 {
+  color: var(--pink-muted) !important;
+}
+
+html[data-user-theme="pink"].dark [class~="bg-[#1a2a3a]"],
+html[data-user-theme="pink"].dark [class~="bg-[#253b51]"],
+html[data-user-theme="pink"].dark [class~="bg-[#e05a2b]"],
+html[data-user-theme="pink"].dark [class~="bg-[#f0642f]"],
+html[data-user-theme="pink"].dark #add-consignment-btn,
+html[data-user-theme="pink"].dark button:has(svg.lucide-save),
+html[data-user-theme="pink"].dark button:has(svg.lucide-printer),
+html[data-user-theme="pink"].dark .repair-sms-shipping-button {
+  background-color: var(--pink-accent) !important;
+  border-color: #d27ba0 !important;
+  color: #ffffff !important;
+}
+
+html[data-user-theme="pink"].dark #repairs-table-container,
+html[data-user-theme="pink"].dark #consignment-table-container {
+  border-color: #a65178 !important;
+}
+
+html[data-user-theme="pink"].dark #repairs-table-container table thead tr,
+html[data-user-theme="pink"].dark #consignment-table-container table thead tr {
+  background: linear-gradient(135deg, #9e4c74, #713452) !important;
+  border-color: #bd6c91 !important;
+}
+
+html[data-user-theme="pink"].dark #repairs-table-container table tbody tr,
+html[data-user-theme="pink"].dark #consignment-table-container table tbody tr,
+html[data-user-theme="pink"].dark #repairs-table-container table,
+html[data-user-theme="pink"].dark #consignment-table-container table {
+  background-color: var(--pink-surface) !important;
+  border-color: var(--pink-border) !important;
+}
+
+html[data-user-theme="pink"].dark #repairs-table-container table tbody tr:nth-child(even),
+html[data-user-theme="pink"].dark #consignment-table-container table tbody tr:nth-child(even) {
+  background-color: var(--pink-raised) !important;
+}
+
+html[data-user-theme="pink"].dark #repairs-table-container table tbody tr:hover,
+html[data-user-theme="pink"].dark #consignment-table-container table tbody tr:hover {
+  background-color: #422b3b !important;
+}
+
+html[data-user-theme="pink"].dark input,
+html[data-user-theme="pink"].dark select,
+html[data-user-theme="pink"].dark textarea {
+  background-color: #30212c !important;
+  border-color: #684157 !important;
+  color: var(--pink-text) !important;
+  caret-color: #ef9cbe !important;
+}
+
+html[data-user-theme="pink"].dark input:focus,
+html[data-user-theme="pink"].dark select:focus,
+html[data-user-theme="pink"].dark textarea:focus {
+  border-color: #d277a0 !important;
+  box-shadow: 0 0 0 2px rgb(210 119 160 / 22%) !important;
+}
+

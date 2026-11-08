@@ -17,6 +17,7 @@ interface SidebarProps {
   onLogout: () => void;
   dbStatus: DbStatus;
   userName: string;
+  userRole: string;
   isAdmin: boolean;
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
@@ -46,6 +47,7 @@ export default function Sidebar({
   onLogout,
   dbStatus,
   userName,
+  userRole,
   isAdmin,
   theme,
   onToggleTheme,
@@ -231,11 +233,13 @@ export default function Sidebar({
         {/* Signed-in user and logout */}
         <div className="flex w-full items-center justify-between gap-2 rounded-2xl border border-slate-700/70 bg-slate-900/35 p-2" id="sidebar-user-logout-row">
           <div className="flex min-w-0 flex-1 items-center gap-2.5 px-1">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-400/25 bg-sky-400/10 text-sky-200" title={isAdmin ? "admin" : "user"}>
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-400/25 bg-sky-400/10 text-sky-200" title={isAdmin ? "admin" : userRole === "pink-user" ? "یوزر صورتی" : "user"}>
               <RoleIcon role={isAdmin ? "admin" : "user"} className="h-[18px] w-[18px]" />
             </div>
             <div className="min-w-0 flex-1 text-right">
-              <span className="block text-[9px] font-semibold text-slate-500" dir="ltr">{isAdmin ? "admin" : "user"}</span>
+              <span className="block text-[9px] font-semibold text-slate-500" dir={!isAdmin && userRole === "pink-user" ? "rtl" : "ltr"}>
+                {isAdmin ? "admin" : userRole === "pink-user" ? "یوزر صورتی" : "user"}
+              </span>
               <span className="block truncate text-[11px] font-black text-slate-100" title={userName}>{userName}</span>
             </div>
           </div>

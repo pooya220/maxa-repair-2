@@ -1573,7 +1573,7 @@ async function startServer() {
     const newUser = req.body as User;
     
     // Validate role
-    if (newUser.role !== "admin" && newUser.role !== "user") {
+    if (newUser.role !== "admin" && newUser.role !== "user" && newUser.role !== "pink-user") {
       newUser.role = "user";
     }
 
@@ -1603,7 +1603,7 @@ async function startServer() {
     const { name, username, role, password } = req.body;
     if (name) db.users[userIndex].name = name;
     if (username) db.users[userIndex].username = username;
-    if (role && (role === "admin" || role === "user")) db.users[userIndex].role = role;
+    if (role && (role === "admin" || role === "user" || role === "pink-user")) db.users[userIndex].role = role;
     if (password) db.users[userIndex].password = password;
 
     saveDb(db);

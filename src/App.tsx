@@ -49,6 +49,19 @@ export default function App() {
   // Authentication State
   const [user, setUser] = useState<User | null>(null);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    if (user?.role === "pink-user") {
+      root.dataset.userTheme = "pink";
+    } else {
+      delete root.dataset.userTheme;
+    }
+
+    return () => {
+      delete root.dataset.userTheme;
+    };
+  }, [user?.role]);
+
   // Layout Tab Navigation
   const [activeTab, setActiveTab] = useState<'dashboard' | 'repairs' | 'consignment' | 'reminders'>('repairs');
 
@@ -418,6 +431,7 @@ export default function App() {
         onLogout={() => setUser(null)}
         dbStatus={dbStatus}
         userName={user.role === 'admin' ? user.username : user.name}
+        userRole={user.role}
         isAdmin={user.role === 'admin'}
         theme={theme}
         onToggleTheme={toggleTheme}

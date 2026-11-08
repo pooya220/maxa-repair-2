@@ -1328,6 +1328,7 @@ export default function SettingsModal({ onClose, dbStatus, refreshDbStatus, onSe
                           className="w-full bg-white text-slate-900 px-3 py-1.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-1 focus:ring-[#1a2a3a] font-bold"
                         >
                           <option value="user">user — فقط مشاهده</option>
+                          <option value="pink-user">یوزر صورتی — دسترسی کاربر + تم صورتی</option>
                           <option value="admin">admin — دسترسی کامل</option>
                         </select>
                       </div>
@@ -1388,12 +1389,14 @@ export default function SettingsModal({ onClose, dbStatus, refreshDbStatus, onSe
                                 <td className="p-3 font-mono text-slate-700 font-bold">{u.username}</td>
                                 <td className="p-3 font-bold">{u.name}</td>
                                 <td className="p-3">
-                                  <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold inline-flex items-center gap-1 bg-sky-50 text-sky-800 border border-sky-200">
+                                  <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold inline-flex items-center gap-1 ${u.role === 'pink-user' ? 'bg-pink-50 text-pink-800 border border-pink-200' : 'bg-sky-50 text-sky-800 border border-sky-200'}`}>
                                     <RoleIcon
                                       role={u.role === 'admin' ? 'admin' : 'user'}
-                                      className="w-3.5 h-3.5 text-sky-700"
+                                      className={`w-3.5 h-3.5 ${u.role === 'pink-user' ? 'text-pink-700' : 'text-sky-700'}`}
                                     />
-                                    <span dir="ltr">{u.role === 'admin' ? 'admin' : 'user'}</span>
+                                    <span dir={u.role === 'pink-user' ? 'rtl' : 'ltr'}>
+                                      {u.role === 'admin' ? 'admin' : u.role === 'pink-user' ? 'یوزر صورتی' : 'user'}
+                                    </span>
                                   </span>
                                 </td>
                                 <td className="p-3 text-center">
@@ -1476,6 +1479,7 @@ export default function SettingsModal({ onClose, dbStatus, refreshDbStatus, onSe
                               className="w-full bg-slate-50 text-slate-900 px-3 py-2 text-xs rounded-xl border border-slate-300 font-bold disabled:opacity-60"
                             >
                               <option value="user">user — فقط مشاهده</option>
+                              <option value="pink-user">یوزر صورتی — دسترسی کاربر + تم صورتی</option>
                               <option value="admin">admin — دسترسی کامل</option>
                             </select>
                           </div>
